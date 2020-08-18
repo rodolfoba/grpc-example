@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.github.rodolfoba.grpcexample.proto";
+option java_outer_classname = "LegacyProto";
+
+package legacy;
+
+// The legacy service definition.
+service Legacy {
+    // Sends a transaction
+    rpc SendTransaction (Transaction) returns (Transaction) {}
+}
+
+// The Transaction message containing the data.
+message Transaction {
+    string data = 1;
+}
